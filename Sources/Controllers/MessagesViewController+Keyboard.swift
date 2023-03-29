@@ -31,7 +31,7 @@ extension MessagesViewController {
   // MARK: - Register Observers
 
   internal func addKeyboardObservers() {
-    keyboardManager.bind(inputAccessoryView: inputContainerView)
+//    keyboardManager.bind(inputAccessoryView: inputContainerView)
     keyboardManager.bind(to: messagesCollectionView)
 
     /// Observe didBeginEditing to scroll content to last item if necessary
@@ -66,14 +66,14 @@ extension MessagesViewController {
       }
       .store(in: &disposeBag)
 
-    /// Observe frame change of the input bar container to update collectioView bottom inset
-    inputContainerView.publisher(for: \.center)
-      .receive(on: DispatchQueue.main)
-      .removeDuplicates()
-      .sink(receiveValue: { [weak self] _ in
-        self?.updateMessageCollectionViewBottomInset()
-      })
-      .store(in: &disposeBag)
+//    /// Observe frame change of the input bar container to update collectioView bottom inset
+//    inputContainerView.publisher(for: \.center)
+//      .receive(on: DispatchQueue.main)
+//      .removeDuplicates()
+//      .sink(receiveValue: { [weak self] _ in
+//        self?.updateMessageCollectionViewBottomInset()
+//      })
+//      .store(in: &disposeBag)
   }
 
   // MARK: - Updating insets
