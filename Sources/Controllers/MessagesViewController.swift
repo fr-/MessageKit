@@ -236,6 +236,8 @@ open class MessagesViewController: UIViewController, UICollectionViewDelegateFlo
     cell.typingBubble.startAnimating()
   }
 
+  open func collectionView(_ collectionView: UICollectionView, didEndDisplaying cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {}
+
   open func collectionView(
     _ collectionView: UICollectionView,
     layout _: UICollectionViewLayout,
